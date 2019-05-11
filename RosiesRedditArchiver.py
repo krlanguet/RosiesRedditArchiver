@@ -7,7 +7,8 @@ reddit = praw.Reddit('RosiesRedditArchiver')
 print("Full user account access: ", not reddit.read_only)
 
 print("Saved Items:")
-for item in reddit.redditor('krlanguet').saved(limit=9):
+for item in reddit.redditor('krlanguet').saved(limit=20):
+    print(" * ", end='')
     if isinstance(item, Submission):
         print("Post title:", item.title)
     elif isinstance(item, Comment):
